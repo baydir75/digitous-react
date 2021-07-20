@@ -1,9 +1,4 @@
 import React from 'react';
-const dWalk = {
-    fontSize : 100,
-    color: "black"
-}
-
 class Box extends React.Component {
     render() {
         return (
@@ -12,6 +7,8 @@ class Box extends React.Component {
                     {this.props.icon}
                 </span>
                 <p>{this.props.value} {this.props.unit}</p>
+                {this.props.unit !== "L" ? <input type="range" min={this.props.min} max={this.props.max} value={this.props.value} onInput={this.props.onChange} onChange={this.props.calculate}/> : null}
+                
             </div>
         )
     }
