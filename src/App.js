@@ -51,15 +51,13 @@ class App extends React.Component {
     let i = 0.02;
 
     if (this.state.heart > 120) {
-    this.setState({ water: initialWater + (c * d)})
-    }
-
-    if (this.state.steps > 10000) {
-      this.setState({water: initialWater + (f * g)})
-    }
-
-    if (this.state.temperature > 20) {
-      this.setState({water: initialWater + (h * i)})
+      this.setState({ water: initialWater + (c * d) })
+    } else if (this.state.steps > 10000) {
+      this.setState({ water: initialWater + (f * g) })
+    } else if (this.state.temperature > 20) {
+      this.setState({ water: initialWater + (h * i) })
+    } else {
+      this.setState({ water: initialWater })
     }
   }
 
